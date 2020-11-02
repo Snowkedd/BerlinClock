@@ -171,4 +171,9 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("O\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX",$actual);
     }
 
+    public function test_berlinClock_given_01_23_43_should_return_OOOX_OOROXXXXXXX_OXXX_XXXX_X(){
+        $actual = $this->berlinClock("01:23:43");
+        $this->assertEquals("X\nXXXX\nOXXX\nOOROXXXXXXX\nOOOX",$actual);
+    }
+
 }
