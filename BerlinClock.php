@@ -1,7 +1,7 @@
 <?php
 class BerlinClock{
 
-    public function giveTimeBerlin(String $message) : string
+    public function giveTimeBerlinFirstLine(String $message) : string
     {
         $tabTime = str_split($message);
         $minutes = $this->giveMinute($tabTime);
@@ -24,6 +24,8 @@ class BerlinClock{
         if($minutes % 5 == 4) return "OOOO";
         return "XXXX";
     }
+
+
 
 
 }
