@@ -8,6 +8,7 @@ class BerlinClock{
 
         if($minutes % 5 == 1) return "OXXX";
         if($minutes % 5 == 2) return "OOXX";
+        if($minutes % 5 == 3) return "OOOX";
         return "XXXX";
     }
 
