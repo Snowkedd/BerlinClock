@@ -118,25 +118,26 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("OXXX",$actual);
     }
 
-    public function test_berlingClock_given_00_hours_should_return_XXXX(){
+    public function test_berlinClock_4th_Line_given_00_hours_should_return_XXXX(){
         $actual = $this->fourthLine("00:00:00");
         $this->assertEquals("XXXX",$actual);
     }
 
-    public function test_berlingClock_given_05_hours_should_return_OXXX(){
+    public function test_berlinClock_4th_Line_given_05_hours_should_return_OXXX(){
         $actual = $this->fourthLine("05:00:00");
         $this->assertEquals("OXXX",$actual);
     }
 
-    public function test_berlingClock_given_10_hours_should_return_OOXX(){
+    public function test_berlinClock_4th_Line_given_10_hours_should_return_OOXX(){
         $actual = $this->fourthLine("10:00:00");
         $this->assertEquals("OOXX",$actual);
     }
 
-    public function test_berlingClock_given_20_hours_should_return_OOOO(){
+    public function test_berlinClock_4th_Line_given_20_hours_should_return_OOOO(){
         $actual = $this->fourthLine("20:00:00");
         $this->assertEquals("OOOO",$actual);
     }
+
 
 
 }
