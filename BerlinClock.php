@@ -29,11 +29,22 @@ class BerlinClock{
     {
         $tabTime = str_split($string);
         $minutes = $this->giveMinute($tabTime);
-        if(floor($minutes / 5) == 1) return "OXXXXXXXXXX";
-        if(floor($minutes / 5) == 2) return "OOXXXXXXXXX";
-        if(floor($minutes / 5) == 3) return "OORXXXXXXXX";
-        return "XXXXXXXXXXX";
 
+        $secondLine = "";
+        $length = floor($minutes / 5);
+        for($i = 1; $i <= $length; $i++){
+            if($i % 3 == 0){
+                $secondLine .= "R";
+            }else{
+                $secondLine .= "O";
+            }
+        }
+
+        for($i = $length + 1; $i <= 11; $i++){
+            $secondLine .= "X";
+        }
+
+        return $secondLine;
     }
 
 }
