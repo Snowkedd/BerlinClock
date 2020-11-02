@@ -7,6 +7,7 @@ class BerlinClock{
         $minutes = $this->giveMinute($tabTime);
 
         if($minutes % 5 == 1) return "OXXX";
+        if($minutes % 5 == 2) return "OOXX";
         return "XXXX";
     }
 
