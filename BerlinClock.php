@@ -5,7 +5,7 @@ class BerlinClock{
     {
         $tabTime = str_split($message);
         $minutes = $this->giveMinute($tabTime);
-        return $this->minuteToString($minutes);
+        return $this->timeToString($minutes);
 
     }
 
@@ -16,7 +16,14 @@ class BerlinClock{
         return ($tens*10) + $unit;
     }
 
-    public function minuteToString(int $minutes) :string
+    public function giveHours(Array $tabTime) : int
+    {
+        $tens = (int) $tabTime[6];
+        $unit = (int) $tabTime[7];
+        return ($tens*10) + $unit;
+    }
+
+    public function timeToString(int $minutes) :string
     {
         if($minutes % 5 == 1) return "OXXX";
         if($minutes % 5 == 2) return "OOXX";
@@ -45,6 +52,13 @@ class BerlinClock{
         }
 
         return $secondLine;
+    }
+
+    public function giveTimeThirdLine(String $string) :string
+    {
+        $tabTime = str_split($string);
+        $hours = $this->giveHours($tabTime);
+        return $this->timeToString($hours);
     }
 
 }

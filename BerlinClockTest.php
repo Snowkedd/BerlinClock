@@ -18,6 +18,10 @@ class BerlinClockTest extends TestCase
     {
         return $this->berlinClock->giveTimeBerlinSecondLine($string);
     }
+    private function thirdLine(String $string): string
+    {
+        return $this->berlinClock->giveTimeThirdLine($string);
+    }
     protected function setUp(): void
     {
         parent::setUp();
@@ -88,5 +92,11 @@ class BerlinClockTest extends TestCase
         $actual = $this->secondLine("00:56:00");
         $this->assertEquals("OOROOROOROO",$actual);
     }
+
+    public function test_berlinClock_given_00_hours_should_return_XXXX(){
+        $actual = $this->thirdLine("00:00:00");
+        $this->assertEquals("XXXX",$actual);
+    }
+
 
 }
