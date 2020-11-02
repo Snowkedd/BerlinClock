@@ -9,29 +9,6 @@ class BerlinClock{
 
     }
 
-    public function giveMinute(Array $tabTime) : int
-    {
-        $tens = (int) $tabTime[3];
-        $unit = (int) $tabTime[4];
-        return ($tens*10) + $unit;
-    }
-
-    public function giveHours(Array $tabTime) : int
-    {
-        $tens = (int) $tabTime[6];
-        $unit = (int) $tabTime[7];
-        return ($tens*10) + $unit;
-    }
-
-    public function timeToString(int $minutes) :string
-    {
-        if($minutes % 5 == 1) return "OXXX";
-        if($minutes % 5 == 2) return "OOXX";
-        if($minutes % 5 == 3) return "OOOX";
-        if($minutes % 5 == 4) return "OOOO";
-        return "XXXX";
-    }
-
     public function giveTimeBerlinSecondLine(String $string) :string
     {
         $tabTime = str_split($string);
@@ -59,6 +36,29 @@ class BerlinClock{
         $tabTime = str_split($string);
         $hours = $this->giveHours($tabTime);
         return $this->timeToString($hours);
+    }
+
+    public function giveMinute(Array $tabTime) : int
+    {
+        $tens = (int) $tabTime[3];
+        $unit = (int) $tabTime[4];
+        return ($tens*10) + $unit;
+    }
+
+    public function giveHours(Array $tabTime) : int
+    {
+        $tens = (int) $tabTime[0];
+        $unit = (int) $tabTime[1];
+        return ($tens*10) + $unit;
+    }
+
+    public function timeToString(int $time) :string
+    {
+        if($time % 5 == 1) return "OXXX";
+        if($time % 5 == 2) return "OOXX";
+        if($time % 5 == 3) return "OOOX";
+        if($time % 5 == 4) return "OOOO";
+        return "XXXX";
     }
 
 }

@@ -98,5 +98,10 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("XXXX",$actual);
     }
 
+    public function test_berlinClock_given_01_hours_should_return_XXXX(){
+        $actual = $this->thirdLine("01:00:00");
+        $this->assertEquals("OXXX",$actual);
+    }
+
 
 }
