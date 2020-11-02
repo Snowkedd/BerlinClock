@@ -27,6 +27,9 @@ class BerlinClock{
 
     public function giveTimeBerlinSecondLine(String $string) :string
     {
+        $tabTime = str_split($string);
+        $minutes = $this->giveMinute($tabTime);
+        if(floor($minutes / 5) == 2) return "OOXXXXXXXXX";
         return "OXXXXXXXXXX";
 
     }
