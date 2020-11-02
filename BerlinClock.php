@@ -16,7 +16,7 @@ class BerlinClock{
         return ($tens*10) + $unit;
     }
 
-    public function minuteToString($minutes) :string
+    public function minuteToString(int $minutes) :string
     {
         if($minutes % 5 == 1) return "OXXX";
         if($minutes % 5 == 2) return "OOXX";
@@ -25,7 +25,10 @@ class BerlinClock{
         return "XXXX";
     }
 
+    public function giveTimeBerlinSecondLine(String $string) :string
+    {
+        return "OXXXXXXXXXX";
 
-
+    }
 
 }

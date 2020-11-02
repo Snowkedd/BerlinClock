@@ -14,7 +14,10 @@ class BerlinClockTest extends TestCase
     {
         return $this->berlinClock->giveTimeBerlinFirstLine($string);
     }
-
+    private function secondLine(String $string): string
+    {
+        return $this->berlinClock->giveTimeBerlinSecondLine($string);
+    }
     protected function setUp(): void
     {
         parent::setUp();
@@ -56,7 +59,10 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("OOOX",$actual);
     }
 
-
+    public function test_berlinClock_given_5_minutes_should_return_OXXXXXXXXXX(){
+        $actual = $this->secondLine("00:05:00");
+        $this->assertEquals("OXXXXXXXXXX",$actual);
+    }
 
 
 
