@@ -38,6 +38,19 @@ class BerlinClock{
         return $this->timeToString($hours);
     }
 
+    public function giveTimeFourthLine(String $string) :string
+    {
+        $tabTime = str_split($string);
+        $hours = $this->giveHours($tabTime);
+
+        if(floor($hours / 5) == 1) return "OXXX";
+        if(floor($hours / 5) == 2) return "OOXX";
+        if(floor($hours / 5) == 3) return "OOOX";
+        if(floor($hours / 5) == 4) return "OOOO";
+        return "XXXX";
+
+    }
+
     public function giveMinute(Array $tabTime) : int
     {
         $tens = (int) $tabTime[3];
