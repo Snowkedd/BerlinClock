@@ -157,4 +157,9 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("O",$actual);
     }
 
+    public function test_berlinClock_given_59_second_should_return_X(){
+        $actual = $this->fifthLine("00:00:59");
+        $this->assertEquals("X",$actual);
+    }
+
 }
