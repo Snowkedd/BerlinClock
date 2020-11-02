@@ -45,6 +45,8 @@ class BerlinClock{
         return $this->timeFourthLine($hours);
     }
 
+
+
     public function giveMinute(Array $tabTime) : int
     {
         $tens = (int) $tabTime[3];
@@ -70,10 +72,17 @@ class BerlinClock{
 
     public function timeFourthLine(int $hours) :string
     {
-        if(floor($hours / 5) == 1) return "OXXX";
-        if(floor($hours / 5) == 2) return "OOXX";
-        if(floor($hours / 5) == 3) return "OOOX";
-        if(floor($hours / 5) == 4) return "OOOO";
-        return "XXXX";
+        switch (floor($hours / 5)){
+            case 1:
+                return "OXXX";
+            case 2:
+                return "OOXX";
+            case 3:
+                return "OOOX";
+            case 4:
+                return "OOOO";
+            default:
+                return "XXXX";
+        }
     }
 }
