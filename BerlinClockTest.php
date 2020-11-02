@@ -30,6 +30,10 @@ class BerlinClockTest extends TestCase
     {
         return $this->berlinClock->giveTimeFifthLine($string);
     }
+    private function berlinClock(String $string): string
+    {
+        return $this->berlinClock->giveWholeBerlinClock($string);
+    }
 
     protected function setUp(): void
     {
@@ -160,6 +164,11 @@ class BerlinClockTest extends TestCase
     public function test_berlinClock_given_59_second_should_return_X(){
         $actual = $this->fifthLine("00:00:59");
         $this->assertEquals("X",$actual);
+    }
+
+    public function test_berlinClock_given_00_00_00_should_return_XXXX_XXXXXXXXXXX_XXXX_XXXX_O(){
+        $actual = $this->berlinClock("00:00:00");
+        $this->assertEquals("O\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX",$actual);
     }
 
 }

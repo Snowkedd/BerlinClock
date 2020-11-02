@@ -98,4 +98,14 @@ class BerlinClock{
                 return "XXXX";
         }
     }
+
+    public function giveWholeBerlinClock(String $string) :string{
+        $finalClock = "";
+        $finalClock .= $this->giveTimeFifthLine($string) . "\n";
+        $finalClock .= $this->giveTimeFourthLine($string) . "\n";
+        $finalClock .= $this->giveTimeThirdLine($string) . "\n";
+        $finalClock .= $this->giveTimeBerlinSecondLine($string) . "\n";
+        $finalClock .= $this->giveTimeBerlinFirstLine($string);
+        return $finalClock;
+    }
 }
