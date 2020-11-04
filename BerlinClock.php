@@ -1,17 +1,17 @@
 <?php
 class BerlinClock{
 
-    public function giveTimeBerlinFirstLine(String $message) : string
+    public function giveTimeBerlinFirstLine(String $time) : string
     {
-        $tabTime = str_split($message);
+        $tabTime = str_split($time);
         $minutes = $this->giveMinute($tabTime);
         return $this->timeToString($minutes);
 
     }
 
-    public function giveTimeBerlinSecondLine(String $string) :string
+    public function giveTimeBerlinSecondLine(String $time) :string
     {
-        $tabTime = str_split($string);
+        $tabTime = str_split($time);
         $minutes = $this->giveMinute($tabTime);
 
         $secondLine = "";
@@ -31,23 +31,23 @@ class BerlinClock{
         return $secondLine;
     }
 
-    public function giveTimeThirdLine(String $string) :string
+    public function giveTimeThirdLine(String $time) :string
     {
-        $tabTime = str_split($string);
+        $tabTime = str_split($time);
         $hours = $this->giveHours($tabTime);
         return $this->timeToString($hours);
     }
 
-    public function giveTimeFourthLine(String $string) :string
+    public function giveTimeFourthLine(String $time) :string
     {
-        $tabTime = str_split($string);
+        $tabTime = str_split($time);
         $hours = $this->giveHours($tabTime);
         return $this->timeFourthLine($hours);
     }
 
-    public function giveTimeFifthLine(String $string) :string
+    public function giveTimeFifthLine(String $time) :string
     {
-        $tabTime = str_split($string);
+        $tabTime = str_split($time);
         $seconds = $this->giveSeconds($tabTime);
         if($seconds % 2 == 0) return "O";
         return "X";
